@@ -1,0 +1,180 @@
+:root{
+
+    --primarycolor:hsl(199,100%,33%);
+    --secondarycolor:hsl(187,85%,43%);
+    --gradiantcolor:linear-gradient(to right,hsl(187, 85%, 43%),hsl(199, 100%, 33%));
+    --whitecolor:rgb(242, 227, 227);
+    --blackcolor:rgb(18, 17, 17);
+    --whitecolordeam:rgb(248, 240, 240);
+    --graytext: rgb(128, 128, 128);
+    --inputcolor:rgb(239,239,239);
+    --bodycolor:rgb(240,240,240);
+    --cardbg:rgb(225,225,235);
+    --cardhover:rgb(255, 255, 255);
+    
+    }
+
+.main{
+    width: 100%;
+    .sectitle{
+        .title{
+            position: relative;
+            width: max-content;
+            color: rgb(128, 128, 128);
+            margin: 1rem 0;
+            z-index: 2;
+
+            &::after{
+                position: absolute;
+                background: var(--secondarycolor);
+                height: 5px;
+                width:120px;
+                right: 0;
+                bottom: 5px;
+                z-index: -1;
+
+            }
+        }
+    }
+    .seccontent{
+        justify-content: center;
+        gap: 1.5rem;
+
+        .singledestination{
+            height: 100%;
+            display: grid;
+            row-gap: 10px;
+            border-radius: 10px;
+            align-items: center;
+            background: var(--cardbg);
+            box-shadow: 0 2px 4px rgba(140, 140, 141, 0.549);
+            overflow: hidden;
+            &:hover{
+                background: var(--cardhover);
+                box-shadow: 1 4px 4px rgba(85, 85, 114, 0.549);
+                transition: .3s ease;
+
+            }
+            .imgdiv{
+                height: 100px;
+                width: 100%;
+                overflow: hidden;
+
+                img{
+                    height:100% ;
+                    width: 100%;
+                    object-fit: cover;
+                    transition: .2s ease;
+                }
+                &:hover{
+                    img{
+                        transform: scale(1.1);
+                    }
+                   
+                }
+            }
+            .cardinfo{
+                padding: 1rem;
+
+                .desttitle{
+                    color: var(--blackcolor);
+                    font-size: 1.25rem;
+                }
+                .continent{
+                    gap: .5rem;
+
+                    .icon{
+                        color: var(--graytext);
+                        font-size: 18px;
+                    }
+
+                    .name{
+                        color: var(--graytext);
+                        font-weight: 400;
+                        font-size: 14px;
+                    }
+
+
+
+                }
+                .fees{
+                    width: 100%;
+                    justify-content: space-between;
+                    padding: 1rem;
+                    margin: 1rem 0;
+                  border-top: 1.5px solid var(--graytext);
+                  border-bottom: 1.5px solid var(--graytext);
+
+                  .grade{
+                    color: var(--graytext);
+                    max-width: 100px;
+                    line-height: 20px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    small{
+                        text-align: center;
+                        background: var(--gradiantcolor);
+                        border-radius: 1rem;
+                        color: var(--whitecolor);
+                        padding: 1px 10px;
+                        font-size: 10px;
+                    }
+                  }
+                  .price{
+                    font-size: 2rem;
+                    color: var(--blackcolor);
+                  }
+
+
+                }
+                .desc{
+                    font-size: 13.5px;
+                    font-weight: 500;
+                }
+                .btn{
+                    margin-top: 1rem;
+                    color: var(--blackcolor);
+                    font-weight: 600;
+                    justify-content: space-between;
+                    gap: .5rem;
+
+
+                    .icon{
+                        align-self: center;
+                        font-size: 18px;
+                    }
+
+                }
+            }
+
+        }
+    }
+}
+
+@media screen and (min-width:500px){
+    .title{
+        font-size: 1.5rem;
+        &::after{
+            width: 155px !important;
+        }
+
+    }
+    .seccontent{
+        grid-template-columns: repeat(2,1fr);
+
+        .singledestination{
+            height:auto ;
+        }
+    }
+    }
+    @media screen and (min-width:840px){
+        .seccontent{
+            grid-template-columns: repeat(3,1fr);
+    
+            .singledestination{
+                height:auto ;
+            }
+        }
+        }
